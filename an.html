@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELIS - Everyday life of IT specialists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                ELIS
+            </div>
+            <div class="links">
+                <div class="link"><a href="#home">Home</a></div>
+                <div class="link"><a href="#about">About Us</a></div>
+                <div class="link"><a href="#blog">Blog</a></div>
+                <div class="contact-btn"><a href="mailto:nas.adiya2008@gmail.com">Contact Us</a></div>
+            </div>
+        </div>
+      </nav>
+        <section class="home" id="home">
+            <div class="main-container">
+                <div class="image">
+                    <img src="it.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h1>Everyday life of IT specialists</h1>
+                    <h3>Code, bugs, deadlines, and coffee—that's how an IT specialist spends their day.</h3>
+                    <p>We're Ada and Toty, and this is our blog about what it's like to be an IT professional. Here we write about work and school, share funny stories, useful life hacks, and just have heart-to-heart conversations about life in IT.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/elis_it_specialists?igsh=MTN3bGdwdmMwM2FrMA=="><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://t.me/elis_it_specialists"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="mailto:adiya_n08@mail.ru"><i class="fa-solid fa-at"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Slider / Gallery ===== -->
+<section id="gallery" class="gallery-section" aria-label="Gallery">
+  <div class="gallery-inner">
+    <div class="slider" id="siteSlider" aria-roledescription="carousel">
+      <div class="slides" role="list">
+        <!-- Слайд 1 -->
+        <figure class="slide" role="listitem" data-index="0">
+          <img src="gallery1.jpg" alt="Team working on project" loading="lazy">
+          <figcaption>
+            <strong>Daily standup — quick sync</strong>
+            <span class="caption">Short and focused — helps the team move faster.</span>
+          </figcaption>
+          <button class="zoom-btn" type="button" aria-label="Open image 1 in preview" data-src="gallery1.jpg">🔍</button>
+        </figure>
+
+        <!-- Слайд 2 -->
+        <figure class="slide" role="listitem" data-index="1">
+          <img src="gallery2.jpg" alt="Coffee and laptop" loading="lazy">
+          <figcaption>
+            <strong>Coffee fuels the code</strong>
+            <span class="caption">Small rituals keep us productive.</span>
+          </figcaption>
+          <button class="zoom-btn" type="button" aria-label="Open image 2 in preview" data-src="gallery2.jpg">🔍</button>
+        </figure>
+
+        <!-- Слайд 3 -->
+        <figure class="slide" role="listitem" data-index="2">
+          <img src="gallery3.jpg" alt="Pair programming session" loading="lazy">
+          <figcaption>
+            <strong>Pair programming</strong>
+            <span class="caption">Two brains > one. Share knowledge faster.</span>
+          </figcaption>
+          <button class="zoom-btn" type="button" aria-label="Open image 3 in preview" data-src="gallery3.jpg">🔍</button>
+        </figure>
+        <!-- Добавь ещё .slide по аналогии -->
+      </div>
+
+      <!-- controls -->
+      <button class="slider-btn prev" aria-label="Previous slide">&larr;</button>
+      <button class="slider-btn next" aria-label="Next slide">&rarr;</button>
+
+      <!-- dots -->
+      <div class="slider-dots" role="tablist" aria-label="Slide dots"></div>
+
+    </div>
+
+    <!-- live caption для доступности -->
+    <div class="sr-caption" aria-live="polite" aria-atomic="true"></div>
+  </div>
+</section>
+
+
+        <section class="about-us" id="about">
+            <div class="about-container">
+                <div class="title">
+                    <h1>About Us</h1>
+                    <p>We are Ada and Toty, two friends united by a love for technology and a desire to share our experiences.</p>
+                </div>
+                <div class="about-box">
+                    <div class="box1">
+                        <h1>Why We Started This Blog</h1>
+                        <p>IT has become an essential part of our lives. Every day we face new challenges, exciting projects, funny situations, and those eternal questions like “why do bugs always show up on Friday evening?” We wanted to tell the story of our journey, share knowledge, and maybe inspire those who are just taking their first steps in IT.</p>
+
+                    </div>
+                    <div class="box2">
+                        <h1>Why We Chose to Become IT Specialists</h1>
+                        <p>Each of us has our own path: one was always fascinated by technology and programming, the other by solving problems and creating something new. Eventually, we both found our way into IT—for the freedom of choice, growth opportunities, and the chance to keep learning for life.</p>
+                        
+                    </div>
+                </div>
+                <div class="about-content">
+                        <h3>What This Blog Is About</h3>
+                        <p>What This Blog Is AboHere we write about:</p>
+                        <p> - work and study in IT;</p>
+                        <p> - freelancing and projects;</p>
+                        <p> - useful tools and life hacks;</p>
+                        <p> - everyday stories of IT specialists;</p>
+                        <p> - and, of course, a bit of humor, because in our profession you can’t live without it.</p>
+                        <p>Our blog is a look at IT from the inside—told in a human way, without dry textbooks or unnecessary pretentiousness.ut</p>
+                    </div>
+            </div>
+        </section>
+
+<section id="quotes-section">
+  <h2>Quote of the Moment</h2>
+  <div id="quote" class="quote-box"></div>
+  <button id="newQuoteBtn">Show Another Quote</button>
+</section>
+
+
+
+<script>
+  const quotes = [
+    "Code is like humor. When you have to explain it, it’s bad.",
+    "Experience is the name everyone gives to their mistakes.",
+    "Debugging is like being the detective in a crime movie where you are also the murderer.",
+    "Programs must be written for people to read, and only incidentally for machines to execute.",
+    "Simplicity is the soul of efficiency."
+  ];
+
+  const quoteBox = document.getElementById('quote');
+  const btn = document.getElementById('newQuoteBtn');
+
+  function showRandomQuote() {
+    const random = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteBox.innerHTML = `<p>"${random}"</p>`;
+  }
+
+  // Показываем первую цитату при загрузке
+  showRandomQuote();
+
+  btn.addEventListener('click', showRandomQuote);
+</script>
+
+        <!-- === Секция "Последние обновления" === -->
+<section class="updates-section" aria-labelledby="updates-title" id="blog">
+  <div class="container">
+    <h2 id="updates-title">Latest Updates</h2>
+
+    <!-- Фильтры / вкладки -->
+    <div class="updates-filters" role="tablist" aria-label="Фильтр тем">
+      <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all" tabindex="0">All</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="work" tabindex="-1">Work</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="daily" tabindex="-1">Daily</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="freelance" tabindex="-1">Freelanc</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="lifehacks" tabindex="-1">Lifehacks</button>
+    </div>
+
+    <!-- Список постов -->
+    <div class="updates-list" id="updatesList" aria-live="polite"></div>
+
+    <div class="updates-footer">
+      <button id="loadMoreBtn" class="load-more">Show more</button>
+    </div>
+  </div>
+</section>
+<!-- === /Конец секции === -->
+ <section id="contacts" class="contact-section" aria-labelledby="contacts-title">
+  <div class="contact-inner">
+
+    <!-- left: form -->
+    <div class="contact-form-wrap">
+      <h2 id="contacts-title" class="contact-title">Contacts</h2>
+
+      <!-- confirmation overlay (hidden) -->
+      <div id="contactConfirm" class="contact-confirm" role="status" aria-live="polite" hidden>
+        <strong>Message sent!</strong>
+        <p>Thanks — we received your message and will reply soon.</p>
+        <button id="confirmClose" class="confirm-close" aria-label="Close confirmation">OK</button>
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="row two">
+          <label class="field">
+            <input type="text" name="firstName" placeholder="Name" required>
+          </label>
+          <label class="field">
+            <input type="text" name="lastName" placeholder="Second Name" required>
+          </label>
+        </div>
+
+        <div class="row">
+          <label class="field">
+            <input type="email" name="email" placeholder="Email" required>
+          </label>
+        </div>
+
+        <div class="row">
+          <label class="field">
+            <textarea name="message" placeholder="Message" rows="6" required></textarea>
+          </label>
+        </div>
+
+        <div class="row actions">
+          <button type="submit" class="btn-send">Send</button>
+          <div class="hint">We’ll never share your email — promise.</div>
+        </div>
+      </form>
+    </div>
+
+    <!-- right: info card -->
+    <aside class="contact-info">
+      <div class="info-card">
+        <h3>We’re always excited to hear from you!</h3>
+        <p>Share your stories, useful life hacks, news from the IT world, or just drop us a line to say hi. Whether it's a funny bug you found on Friday night, a productivity trick, or a question about our blog — we'll be glad to read it.</p>
+        <p>Write to us, and let’s make this blog not only about our IT journey, but about yours too.</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ===== FAQ Section (про личный блог Ada & Toty) ===== -->
+<section id="faq" class="faq-section">
+  <div class="faq-container">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-items">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Who writes this blog and what is it about?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>The blog is run by Ada and Toty, two IT specialists who share everyday stories, professional insights, life hacks, and thoughts on a career in IT. It's a personal blog format: honest, humorous, and full of practical advice.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What topics appear most frequently in posts?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>We write about workdays (releases, deadlines), studying and self-studying, freelancing experience, useful tools and extensions, and simple life hacks that save time and nerves.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How to suggest a topic, send material, or ask a question?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>The best way is to use the "Contact Us" form on the website or the email address listed in the header. Briefly describe who you are, what your article is about, and why readers might find it interesting—we'll get back to you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How often are new posts published and where can I follow updates?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>Posts appear irregularly—usually a few times a month, when there's interesting material. The best way to keep up with updates is in the "Latest Updates" section or on our social media using the links in the header.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is it possible to use blog materials (quotes, screenshots)?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>Yes, with attribution and a link to the original. If you wish to use the material more broadly (reprinting the entire article, commercial use), please contact us in advance to discuss rights and terms.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">ELIS</div>
+
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Blog</a>
+      <a href="mailto:nas.adiya2008@gmail.com">Contact</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+    <div class="footer-copy">
+      © 2025 ELIS. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- ==== Auto-close promo/ad popup (student style) ==== -->
+<div id="adModal" class="ad-modal" aria-hidden="true" role="dialog" aria-label="Promo">
+  <div class="ad-modal__panel" role="document">
+    <button class="ad-modal__close" id="adClose" aria-label="Close ad">&times;</button>
+
+    <div class="ad-body">
+      <div class="ad-left">
+        <h3>Quick note from ELIS</h3>
+        <p>We made a small new post — check it out! <strong>Special student tips inside.</strong></p>
+        <a href="#updates-title" class="ad-cta">Go to updates</a>
+      </div>
+
+      <div class="ad-right">
+        <img src="it.jpg" alt="Promo image" />
+        <div class="ad-countdown">Ad ends in <span id="adTimer">5</span>s</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ==== /ad ==== -->
+
+
+<!-- Inline JS for form behavior (place before closing </body>) -->
+<script>
+  (function(){
+    const form = document.getElementById('contactForm');
+    const confirmBox = document.getElementById('contactConfirm');
+    const confirmClose = document.getElementById('confirmClose');
+
+    function showConfirm() {
+      confirmBox.hidden = false;
+      confirmBox.style.opacity = '0';
+      confirmBox.style.transform = 'translateY(6px)';
+      requestAnimationFrame(()=> {
+        confirmBox.style.transition = 'opacity .22s ease, transform .22s ease';
+        confirmBox.style.opacity = '1';
+        confirmBox.style.transform = 'translateY(0)';
+      });
+      // auto-hide after 3s
+      const t = setTimeout(()=> hideConfirm(), 3000);
+      confirmBox.dataset._timeout = t;
+    }
+
+    function hideConfirm() {
+      const t = confirmBox.dataset._timeout;
+      if (t) { clearTimeout(t); delete confirmBox.dataset._timeout; }
+      confirmBox.style.opacity = '0';
+      confirmBox.style.transform = 'translateY(6px)';
+      setTimeout(()=> { confirmBox.hidden = true; }, 220);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // basic validation
+      const data = new FormData(form);
+      if (!data.get('firstName') || !data.get('lastName') || !data.get('email') || !data.get('message')) {
+        // if invalid, show a brief native hint
+        alert('Please fill all fields.');
+        return;
+      }
+
+      // simulate sending (replace with fetch to your backend)
+      // Example:
+      // fetch('/api/send', { method: 'POST', body: data }).then(...)
+      console.log('Contact form (demo):', Object.fromEntries(data.entries()));
+
+      // clear form and show confirmation
+      form.reset();
+      showConfirm();
+    });
+
+    confirmClose.addEventListener('click', hideConfirm);
+  })();
+</script>
+
+<script>
+/* === Демонстрационные данные ===
+   Заменяй этот массив реальными данными (или подтягивай через fetch) */
+const posts = [
+  { id: 1, title: "Why Mondays Aren't So Scary", excerpt: "A few life hacks to start the week on the resource.", time: "2025-10-08T12:00:00Z", category: "daily", thumb: "" },
+  { id: 2, title: "First day at work in a new team", excerpt: "How to fit into an IT team without feeling like an outsider.", time: "2025-10-01T14:20:00Z", category: "work", thumb: "" },
+  { id: 3, title: "What does a remote IT professional's day look like", excerpt: "Alarm clock, coffee, tasks and a cat on the keyboard.", time: "2025-10-05T09:10:00Z", category: "daily", thumb: "" },
+  { id: 4, title: "How to find your first clients", excerpt: "Work sites and tips for beginners.", time: "2025-09-25T12:00:00Z", category: "freelance", thumb: "" },
+  { id: 5, title: "Top 10 Keyboard Shortcuts That Re-ally Speed ​​Up Your Work", excerpt: "Once you learn them, you won't be able to live without them.", time: "2025-10-04T16:00:00Z", category: "lifehacks", thumb: "" },
+  { id: 6, title: "What to do if the deadline is looming", excerpt: "Proven ways to avoid drowning in tasks and still deliver your project on time.", time: "2025-09-28T08:30:00Z", category: "work", thumb: "" },
+
+  { id: 7, title: "Rallies without pain", excerpt: "How to survive endless phone calls and make them productive.", time: "2025-09-13T04:28:00Z", category: "work", thumb: "" },
+  { id: 8, title: "5 Mistakes Beginner Developers Make", excerpt: "An analysis of typical fuckups and how to avoid them.", time: "2025-08-03T11:00:00Z", category: "work", thumb: "" },
+  { id: 9, title: "Balance between code and rest", excerpt: "Why it's important to turn off your laptop and rest on time.", time: "2025-08-23T14:33:00Z", category: "work", thumb: "" },
+  { id: 10, title: "Nighttime Coding: Pros and Cons", excerpt: "Is it worth working at night or is it self-deception", time: "2025-08-28T09:00:00Z", category: "daily", thumb: "" },
+  { id: 11, title: "What's different about Friday for IT professionals", excerpt: "Surprise: bugs are found on this very day.", time: "2025-08-06T08:30:00Z", category: "daily", thumb: "" },
+  { id: 12, title: "Little Rituals of Productivity", excerpt: "What helps you stay focused every day.", time: "2025-09-20T10:13:00Z", category: "daily", thumb: "" },
+  { id: 13, title: "Freelance or office: which to choose?", excerpt: "Pros and cons of both models.", time: "2025-08-29T08:30:00Z", category: "freelance", thumb: "" },
+  { id: 14, title: "5 Mistakes Newbie Freelancers Make", excerpt: "And how to avoid them so as not to lose money and nerves.", time: "2025-09-28T08:30:00Z", category: "freelance", thumb: "" },
+  { id: 15, title: "How to negotiate fair pay", excerpt: "Negotiation skills for a freelance IT specialist.", time: "2025-08-10T22:30:00Z", category: "freelance", thumb: "" },
+  { id: 16, title: "Time management in freelancing", excerpt: "How to avoid working 24/7 and still get everything done.", time: "2025-08-01T18:46:00Z", category: "freelance", thumb: "" },
+  { id: 17, title: "How to upgrade your workstation", excerpt: "From ergonomics to lighting: comfort for productivity.", time: "2025-08-16T23:30:00Z", category: "lifehacks", thumb: "" },
+  { id: 18, title: "Reading code without pain", excerpt: "Techniques that help you understand other people's code faster.", time: "2025-08-22T00:50:00Z", category: "lifehacks", thumb: "" },
+  { id: 19, title: "Minimum procrastination, maximum benefit", excerpt: "Time management tips for IT professionals.", time: "2025-08-18T08:30:00Z", category: "lifehacks", thumb: "" },
+  { id: 20, title: "The Best Exten-sions for VS Code", excerpt: "What is really worth putting in and what is unnecessary.", time: "2025-08-05T03:41:00Z", category: "lifehacks", thumb: "" }
+];
+
+let visibleCount = 5;
+let currentFilter = 'all';
+
+const $list = document.getElementById('updatesList');
+const $filterBtns = document.querySelectorAll('.filter-btn');
+const $loadMore = document.getElementById('loadMoreBtn');
+
+function formatTime(iso) {
+  const d = new Date(iso);
+  return d.toLocaleString('ru-RU', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+function filteredPosts() {
+  if (currentFilter === 'all') return posts.slice().sort((a,b)=> new Date(b.time) - new Date(a.time));
+  return posts.filter(p => p.category === currentFilter).sort((a,b)=> new Date(b.time) - new Date(a.time));
+}
+
+function renderList() {
+  const data = filteredPosts();
+  $list.innerHTML = '';
+
+  if (data.length === 0) {
+    $list.innerHTML = '<div class="empty">There are no posts on this topic yet.</div>';
+    $loadMore.style.display = 'none';
+    return;
+  }
+
+  const toShow = data.slice(0, visibleCount);
+  toShow.forEach(p => {
+    const card = document.createElement('article');
+    card.className = 'update-card';
+    card.setAttribute('tabindex', '0');
+
+    card.innerHTML = `
+      <div class="meta">
+        <a class="title" href="articles/article${p.id}.html" target="_blank">${p.title}</a>
+        <p class="excerpt">${p.excerpt}</p>
+        <div class="time">${formatTime(p.time)}</div>
+        <a href="articles/article${p.id}.html" target="_blank" class="read-more">Read more</a>
+      </div>
+    `;
+    $list.appendChild(card);
+  });
+
+  if (visibleCount < data.length) {
+    $loadMore.style.display = 'inline-block';
+  } else {
+    $loadMore.style.display = 'none';
+  }
+}
+
+/* Фильтры и доступность */
+$filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    $filterBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected','false');
+      b.setAttribute('tabindex','-1');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    btn.setAttribute('tabindex','0');
+
+    currentFilter = btn.getAttribute('data-filter');
+    visibleCount = 4;
+    renderList();
+  });
+
+  btn.addEventListener('keydown', (e) => {
+    const idx = Array.from($filterBtns).indexOf(e.currentTarget);
+    if (e.key === 'ArrowRight') {
+      const next = (idx + 1) % $filterBtns.length;
+      $filterBtns[next].focus();
+    } else if (e.key === 'ArrowLeft') {
+      const prev = (idx - 1 + $filterBtns.length) % $filterBtns.length;
+      $filterBtns[prev].focus();
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      e.currentTarget.click();
+    }
+  });
+});
+
+/* Load more */
+$loadMore.addEventListener('click', () => {
+  visibleCount += 4;
+  renderList();
+});
+
+/* Инициализация */
+renderList();
+
+(function(){
+  const AD_DURATION = 5; // seconds (change if needed)
+  const adModal = document.getElementById('adModal');
+  const adClose = document.getElementById('adClose');
+  const adTimerSpan = document.getElementById('adTimer');
+
+  let countdown = AD_DURATION;
+  let timerId = null;
+
+  function showAd() {
+    // if you want it to show only once per session, check sessionStorage
+    if (sessionStorage.getItem('adDismissed')) return;
+    adModal.setAttribute('aria-hidden','false');
+    adTimerSpan.textContent = countdown;
+
+    timerId = setInterval(()=>{
+      countdown -= 1;
+      adTimerSpan.textContent = countdown;
+      if (countdown <= 0) {
+        closeAd();
+      }
+    }, 1000);
+  }
+
+  function closeAd(saveDismiss = false) {
+    adModal.setAttribute('aria-hidden','true');
+    if (timerId) { clearInterval(timerId); timerId = null; }
+    countdown = AD_DURATION;
+    adTimerSpan.textContent = AD_DURATION;
+    // if user closed, remember for session (optional)
+    if (saveDismiss) sessionStorage.setItem('adDismissed','1');
+  }
+
+  // show ad shortly after page load (adjust delay if needed)
+  window.addEventListener('load', ()=> {
+    // delay so it doesn't feel instant: 800ms
+    setTimeout(showAd, 800);
+  });
+
+  // close controls
+  adClose.addEventListener('click', ()=> closeAd(true)); // save dismissal for session
+  // also allow clicking overlay to close
+  adModal.addEventListener('click', (e)=> {
+    if (e.target === adModal) closeAd(true);
+  });
+  // escape key
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape' && adModal.getAttribute('aria-hidden') === 'false') {
+      closeAd(true);
+    }
+  });
+})();
+
+(function(){
+  const slider = document.getElementById('siteSlider');
+  if (!slider) return;
+
+  const slidesWrap = slider.querySelector('.slides');
+  const slides = Array.from(slidesWrap.querySelectorAll('.slide'));
+  const prevBtn = slider.querySelector('.slider-btn.prev');
+  const nextBtn = slider.querySelector('.slider-btn.next');
+  const dotsWrap = slider.querySelector('.slider-dots');
+  const live = document.querySelector('.sr-caption');
+
+  let index = 0;
+  let autoplay = true;
+  let interval = 4000;
+  let timer = null;
+
+  // build dots
+  slides.forEach((s, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Go to slide ' + (i+1));
+    btn.dataset.index = i;
+    if (i === 0) btn.classList.add('active');
+    dotsWrap.appendChild(btn);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll('button'));
+
+  function goTo(i, userTriggered = false) {
+    index = (i + slides.length) % slides.length;
+    const translateX = -index * 100;
+    slidesWrap.style.transform = `translateX(${translateX}%)`;
+    dots.forEach(d => d.classList.remove('active'));
+    dots[index].classList.add('active');
+
+    // update live caption for screen readers
+    const title = slides[index].querySelector('figcaption strong')?.textContent || '';
+    const caption = slides[index].querySelector('.caption')?.textContent || '';
+    if (live) live.textContent = title + (caption ? (' — ' + caption) : '');
+
+    if (userTriggered) {
+      // pause autoplay for a while when user interacts
+      pauseAutoplay();
+      setTimeout(startAutoplay, 6000);
+    }
+  }
+
+  function prev() { goTo(index - 1, true); }
+  function next() { goTo(index + 1, true); }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  // dots click
+  dots.forEach(d => d.addEventListener('click', (e) => {
+    goTo(Number(e.currentTarget.dataset.index), true);
+  }));
+
+  // keyboard
+  slider.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  // autoplay
+  function startAutoplay() {
+    if (!autoplay) return;
+    if (timer) clearInterval(timer);
+    timer = setInterval(()=> goTo(index + 1), interval);
+  }
+  function pauseAutoplay() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  // pause on hover / focus
+  slider.addEventListener('mouseenter', pauseAutoplay);
+  slider.addEventListener('mouseleave', startAutoplay);
+  slider.addEventListener('focusin', pauseAutoplay);
+  slider.addEventListener('focusout', startAutoplay);
+
+  // zoom button handling — open preview modal if exists
+  slides.forEach(s => {
+    const zoom = s.querySelector('.zoom-btn');
+    if (!zoom) return;
+    zoom.addEventListener('click', (e) => {
+      const src = e.currentTarget.dataset.src || s.querySelector('img')?.src;
+      // try to use imgModal (if exists in page)
+      const imgModal = document.getElementById('imgModal');
+      if (imgModal) {
+        const modalImg = imgModal.querySelector('#modalImage');
+        if (modalImg) {
+          modalImg.src = src;
+          imgModal.setAttribute('aria-hidden','false');
+          document.body.style.overflow = 'hidden';
+        } else {
+          window.open(src, '_blank');
+        }
+      } else {
+        window.open(src, '_blank');
+      }
+    });
+  });
+
+  // start
+  goTo(0);
+  startAutoplay();
+
+})();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+
+    question.addEventListener("click", () => {
+      // Закрываем все, кроме текущего
+      faqItems.forEach(i => {
+        if (i !== item) {
+          i.classList.remove("active");
+          i.querySelector(".faq-answer").setAttribute("aria-hidden", "true");
+          i.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Переключаем текущий
+      const isActive = item.classList.toggle("active");
+      answer.setAttribute("aria-hidden", isActive ? "false" : "true");
+      question.setAttribute("aria-expanded", isActive ? "true" : "false");
+    });
+
+    // Keyboard toggle
+    question.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        question.click();
+      }
+    });
+  });
+});
+</script>
+    
+</body>
+</html>
