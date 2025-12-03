@@ -147,18 +147,18 @@
     quoteBox.innerHTML = `<p>"${random}"</p>`;
   }
 
-  // Показываем первую цитату при загрузке
+ 
   showRandomQuote();
-
   btn.addEventListener('click', showRandomQuote);
+
 </script>
 
-        <!-- === Секция "Последние обновления" === -->
+        
 <section class="updates-section" aria-labelledby="updates-title" id="blog">
   <div class="container">
     <h2 id="updates-title">Latest Updates</h2>
 
-    <!-- Фильтры / вкладки -->
+  
     <div class="updates-filters" role="tablist" aria-label="Фильтр тем">
       <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all" tabindex="0">All</button>
       <button class="filter-btn" role="tab" aria-selected="false" data-filter="work" tabindex="-1">Work</button>
@@ -167,7 +167,7 @@
       <button class="filter-btn" role="tab" aria-selected="false" data-filter="lifehacks" tabindex="-1">Lifehacks</button>
     </div>
 
-    <!-- Список постов -->
+    
     <div class="updates-list" id="updatesList" aria-live="polite"></div>
 
     <div class="updates-footer">
@@ -175,15 +175,13 @@
     </div>
   </div>
 </section>
-<!-- === /Конец секции === -->
+
  <section id="contacts" class="contact-section" aria-labelledby="contacts-title">
   <div class="contact-inner">
 
-    <!-- left: form -->
     <div class="contact-form-wrap">
       <h2 id="contacts-title" class="contact-title">Contacts</h2>
 
-      <!-- confirmation overlay (hidden) -->
       <div id="contactConfirm" class="contact-confirm" role="status" aria-live="polite" hidden>
         <strong>Message sent!</strong>
         <p>Thanks — we received your message and will reply soon.</p>
@@ -219,7 +217,6 @@
       </form>
     </div>
 
-    <!-- right: info card -->
     <aside class="contact-info">
       <div class="info-card">
         <h3>We’re always excited to hear from you!</h3>
@@ -231,7 +228,6 @@
   </div>
 </section>
 
-<!-- ===== FAQ Section (про личный блог Ada & Toty) ===== -->
 <section id="faq" class="faq-section">
   <div class="faq-container">
     <h2 class="faq-title">Frequently Asked Questions</h2>
@@ -317,7 +313,6 @@
 
 
 
-<!-- ==== Auto-close promo/ad popup (student style) ==== -->
 <div id="adModal" class="ad-modal" aria-hidden="true" role="dialog" aria-label="Promo">
   <div class="ad-modal__panel" role="document">
     <button class="ad-modal__close" id="adClose" aria-label="Close ad">&times;</button>
@@ -336,10 +331,8 @@
     </div>
   </div>
 </div>
-<!-- ==== /ad ==== -->
 
 
-<!-- Inline JS for form behavior (place before closing </body>) -->
 <script>
   (function(){
     const form = document.getElementById('contactForm');
@@ -355,7 +348,6 @@
         confirmBox.style.opacity = '1';
         confirmBox.style.transform = 'translateY(0)';
       });
-      // auto-hide after 3s
       const t = setTimeout(()=> hideConfirm(), 3000);
       confirmBox.dataset._timeout = t;
     }
@@ -370,20 +362,14 @@
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      // basic validation
       const data = new FormData(form);
       if (!data.get('firstName') || !data.get('lastName') || !data.get('email') || !data.get('message')) {
-        // if invalid, show a brief native hint
         alert('Please fill all fields.');
         return;
       }
 
-      // simulate sending (replace with fetch to your backend)
-      // Example:
-      // fetch('/api/send', { method: 'POST', body: data }).then(...)
       console.log('Contact form (demo):', Object.fromEntries(data.entries()));
 
-      // clear form and show confirmation
       form.reset();
       showConfirm();
     });
@@ -393,8 +379,6 @@
 </script>
 
 <script>
-/* === Демонстрационные данные ===
-   Заменяй этот массив реальными данными (или подтягивай через fetch) */
 const posts = [
   { id: 1, title: "Why Mondays Aren't So Scary", excerpt: "A few life hacks to start the week on the resource.", time: "2025-10-08T12:00:00Z", category: "daily", thumb: "" },
   { id: 2, title: "First day at work in a new team", excerpt: "How to fit into an IT team without feeling like an outsider.", time: "2025-10-01T14:20:00Z", category: "work", thumb: "" },
@@ -470,7 +454,6 @@ function renderList() {
   }
 }
 
-/* Фильтры и доступность */
 $filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     $filterBtns.forEach(b => {
@@ -502,17 +485,15 @@ $filterBtns.forEach(btn => {
   });
 });
 
-/* Load more */
 $loadMore.addEventListener('click', () => {
   visibleCount += 4;
   renderList();
 });
 
-/* Инициализация */
 renderList();
 
 (function(){
-  const AD_DURATION = 5; // seconds (change if needed)
+  const AD_DURATION = 5; 
   const adModal = document.getElementById('adModal');
   const adClose = document.getElementById('adClose');
   const adTimerSpan = document.getElementById('adTimer');
@@ -521,7 +502,6 @@ renderList();
   let timerId = null;
 
   function showAd() {
-    // if you want it to show only once per session, check sessionStorage
     if (sessionStorage.getItem('adDismissed')) return;
     adModal.setAttribute('aria-hidden','false');
     adTimerSpan.textContent = countdown;
@@ -540,23 +520,17 @@ renderList();
     if (timerId) { clearInterval(timerId); timerId = null; }
     countdown = AD_DURATION;
     adTimerSpan.textContent = AD_DURATION;
-    // if user closed, remember for session (optional)
     if (saveDismiss) sessionStorage.setItem('adDismissed','1');
   }
 
-  // show ad shortly after page load (adjust delay if needed)
   window.addEventListener('load', ()=> {
-    // delay so it doesn't feel instant: 800ms
     setTimeout(showAd, 800);
   });
 
-  // close controls
-  adClose.addEventListener('click', ()=> closeAd(true)); // save dismissal for session
-  // also allow clicking overlay to close
+  adClose.addEventListener('click', ()=> closeAd(true));
   adModal.addEventListener('click', (e)=> {
     if (e.target === adModal) closeAd(true);
   });
-  // escape key
   document.addEventListener('keydown', (e)=>{
     if (e.key === 'Escape' && adModal.getAttribute('aria-hidden') === 'false') {
       closeAd(true);
@@ -580,7 +554,6 @@ renderList();
   let interval = 4000;
   let timer = null;
 
-  // build dots
   slides.forEach((s, i) => {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -599,13 +572,11 @@ renderList();
     dots.forEach(d => d.classList.remove('active'));
     dots[index].classList.add('active');
 
-    // update live caption for screen readers
     const title = slides[index].querySelector('figcaption strong')?.textContent || '';
     const caption = slides[index].querySelector('.caption')?.textContent || '';
     if (live) live.textContent = title + (caption ? (' — ' + caption) : '');
 
     if (userTriggered) {
-      // pause autoplay for a while when user interacts
       pauseAutoplay();
       setTimeout(startAutoplay, 6000);
     }
@@ -617,18 +588,15 @@ renderList();
   prevBtn.addEventListener('click', prev);
   nextBtn.addEventListener('click', next);
 
-  // dots click
   dots.forEach(d => d.addEventListener('click', (e) => {
     goTo(Number(e.currentTarget.dataset.index), true);
   }));
 
-  // keyboard
   slider.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') prev();
     if (e.key === 'ArrowRight') next();
   });
 
-  // autoplay
   function startAutoplay() {
     if (!autoplay) return;
     if (timer) clearInterval(timer);
@@ -638,19 +606,16 @@ renderList();
     if (timer) { clearInterval(timer); timer = null; }
   }
 
-  // pause on hover / focus
   slider.addEventListener('mouseenter', pauseAutoplay);
   slider.addEventListener('mouseleave', startAutoplay);
   slider.addEventListener('focusin', pauseAutoplay);
   slider.addEventListener('focusout', startAutoplay);
 
-  // zoom button handling — open preview modal if exists
   slides.forEach(s => {
     const zoom = s.querySelector('.zoom-btn');
     if (!zoom) return;
     zoom.addEventListener('click', (e) => {
       const src = e.currentTarget.dataset.src || s.querySelector('img')?.src;
-      // try to use imgModal (if exists in page)
       const imgModal = document.getElementById('imgModal');
       if (imgModal) {
         const modalImg = imgModal.querySelector('#modalImage');
@@ -667,7 +632,6 @@ renderList();
     });
   });
 
-  // start
   goTo(0);
   startAutoplay();
 
@@ -681,7 +645,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const answer = item.querySelector(".faq-answer");
 
     question.addEventListener("click", () => {
-      // Закрываем все, кроме текущего
       faqItems.forEach(i => {
         if (i !== item) {
           i.classList.remove("active");
@@ -690,13 +653,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // Переключаем текущий
       const isActive = item.classList.toggle("active");
       answer.setAttribute("aria-hidden", isActive ? "false" : "true");
       question.setAttribute("aria-expanded", isActive ? "true" : "false");
     });
 
-    // Keyboard toggle
     question.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
